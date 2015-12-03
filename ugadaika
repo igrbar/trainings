@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class Ugadaika {
+    public static void main (String[] args){
+        int x = 56;
+        String more = "введите число побольше";
+        String less = "введите число поменьше";
+        String ura = "угадал!";
+        String inval = "неправильный ввод, повторите попытку!";
+        Scanner sc = newScanner (System.in);
+
+        int i = sc.nextInt();
+        System.out.println("угадайте загаданное число. введите число от 0 до 100");
+        switch (i){
+            case i<x: System.out.println (more);
+                int i = sc.nextInt();
+            case i>x: System.out.println (less);
+                int i = sc.nextInt();
+            case i=x: System.out.println (ura);
+                break;
+            default: System.out.println (inval);
+                int i = sc.nextInt();
+        }
+    }
+
+    
+
+
+}
