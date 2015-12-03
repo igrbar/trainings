@@ -2,29 +2,47 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Ugadaika {
-    public static void main (String[] args){
+    public static void main(String[] args) {
         int x = 56;
         String more = "введите число побольше";
         String less = "введите число поменьше";
-        String ura = "угадал!";
+        String ura = "угадал(а)!";
         String inval = "неправильный ввод, повторите попытку!";
-        Scanner sc = newScanner (System.in);
+        Scanner sc = new Scanner(System.in);
 
-        int i = sc.nextInt();
+
+        int i;
         System.out.println("угадайте загаданное число. введите число от 0 до 100");
-        switch (i){
-            case i<x: System.out.println (more);
-                int i = sc.nextInt();
-            case i>x: System.out.println (less);
-                int i = sc.nextInt();
-            case i=x: System.out.println (ura);
-                break;
-            default: System.out.println (inval);
-                int i = sc.nextInt();
+        i = sc.nextInt();
+
+
+        while (i != x) {
+            if (i < x && i>=0 && i<=100) {
+                System.out.println(more);
+                i = sc.nextInt();
+
+            } else if (i > x && i>=0 && i<=100) {
+                System.out.println(less);
+                i = sc.nextInt();
+
+            } else if (i<0) {
+                System.out.println(inval);
+                i = sc.nextInt();
+
+            } else if (i>100) {
+                System.out.println(inval);
+                i = sc.nextInt();
+            }
         }
-    }
 
-    
+            if (i == x) {
+                System.out.println(ura);
+            }
+            else {
+                System.out.println(inval);
+            }
 
 
-}
+        }
+
+        }
